@@ -5,28 +5,28 @@
 [![Tests](https://github.com/HillaryDanan/relativistic-interpretability/workflows/Tests/badge.svg)](https://github.com/HillaryDanan/relativistic-interpretability/actions)
 [![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)]()
 
-> **"A framework for understanding neural network reasoning through multiple geometric lenses, revealing how the same computations may appear fundamentally different from different mathematical perspectives."**
+> **"An exploratory framework for understanding neural network reasoning through multiple geometric lenses, suggesting how the same computations may appear different from alternative mathematical perspectives."**
 
-## Finding
+## Key Finding
 
-**The 9.7% Transformation Bottleneck**: Our analysis of 1,000 GPT-3.5 responses reveals that language models spend only 9.7% of their time in transformation states - a geometric constraint that explains fundamental limitations in AI creativity and reasoning.
+**The 9.7% Transformation Pattern**: Our analysis of 1,000 GPT-3.5 responses reveals that language models spend only 9.7% of their time in what we classify as transformation states - a pattern that may provide insights into current model behaviors and potential areas for improvement.
 
-## Insight
+## Core Insight
 
 <div align="center">
 <img src="https://github.com/HillaryDanan/relativistic-interpretability/blob/main/docs/images/geometric-frames.png" alt="Four Geometric Reference Frames" width="600">
 </div>
 
-Traditional interpretability assumes a single view of neural computations. We show this may be fundamentally incomplete - like trying to understand relativity from a single reference frame.
+Traditional interpretability often assumes a single view of neural computations. We explore whether multiple geometric perspectives might reveal additional patterns - similar to how relativity considers multiple reference frames.
 
-### The Four Fundamental Geometries
+### Proposed Geometric Framework
 
-| Geometry | Structure | Neural Behavior | Cognitive Mode |
-|----------|-----------|-----------------|----------------|
-| **Square** | 4-connectivity, grid-like | Sequential processing, logical chains | Analysis (45.2% of GPT-3.5) |
-| **Triangular** | 6-connectivity, maximum density | Parallel integration, synthesis | Synthesis (27.1% of GPT-3.5) |
-| **Hexagonal** | Optimal packing, natural efficiency | Balanced processing, coherence | Reflection (18.0% of GPT-3.5) |
-| **Pentagonal** | Non-tiling, symmetry-breaking | Creative leaps, transformations | **Transformation (9.7% of GPT-3.5)** |
+| Geometry | Structure | Hypothesized Behavior | Observed Phase |
+|----------|-----------|----------------------|----------------|
+| **Square** | 4-connectivity, grid-like | Sequential processing, logical chains | Analysis (45.2% in our study) |
+| **Triangular** | 6-connectivity, maximum density | Parallel integration, synthesis | Synthesis (27.1% in our study) |
+| **Hexagonal** | Optimal packing, natural efficiency | Balanced processing, coherence | Reflection (18.0% in our study) |
+| **Pentagonal** | Non-tiling, symmetry-breaking | Creative leaps, transformations | **Transformation (9.7% in our study)** |
 
 ## Framework Overview
 
@@ -57,17 +57,17 @@ from relativistic_interpretability import GeometricDivergenceMetrics
 metrics = GeometricDivergenceMetrics()
 divergence = metrics.compute_divergence(projections)
 
-# High divergence = multiple valid interpretations
-# Low divergence = geometric consensus
+# High divergence may indicate multiple valid interpretations
+# Low divergence may suggest geometric consensus
 ```
 
 ### 3. Phase-Coupled Analysis
-Link geometric preferences to Ouroboros cycles:
+Explore potential links between geometric patterns and cyclic behaviors:
 
 ```python
 from relativistic_interpretability import PhaseAnalyzer
 
-# Correlate with Ouroboros phases
+# Investigate correlations with observed phases
 analyzer = PhaseAnalyzer()
 phase_alignment = analyzer.correlate_with_ouroboros(
     geometric_outputs=projections,
@@ -75,19 +75,19 @@ phase_alignment = analyzer.correlate_with_ouroboros(
 )
 ```
 
-## Empirical Validation
+## Empirical Observations & Predictions
 
-Our framework makes concrete, testable predictions:
+Our framework generates testable hypotheses:
 
-### Predictions based on ouroboros-learning results
-- **Language models**: 9.7% pentagonal restriction (p < 0.0001)
-- **Vision models**: Higher hexagonal affinity (18% → 31%)
-- **Multimodal models**: Increased geometric switching at fusion layers
+### Based on Initial Analysis
+- **Language models**: Show 9.7% pentagonal activity in our classification (p < 0.0001)
+- **Hypothesis**: Vision models may show different geometric distributions
+- **Prediction**: Multimodal models might exhibit geometric switching at fusion layers
 
-### Additional Predictions
-- Code generation models will show >20% pentagonal activity
-- Reasoning-optimized models will balance all four geometries equally
-- Geometric divergence predicts hallucination probability
+### Speculative Predictions for Testing
+- Code generation models may show increased pentagonal activity
+- Reasoning-optimized models might balance geometric patterns differently
+- Geometric divergence could correlate with certain model behaviors
 
 ## Quick Start
 
@@ -123,17 +123,17 @@ print(f"Geometric entropy: {analysis.entropy:.3f}")
 print(f"Transformation potential: {analysis.pentagonal_capacity:.1%}")
 ```
 
-## Theoretical Foundation
+## Theoretical Background
 
-This framework unifies three research threads:
+This exploratory framework attempts to synthesize ideas from:
 
-1. **[Multi-Geometric Attention Theory (MGAT)](https://github.com/HillaryDanan/multi-geometric-attention)**: How attention naturally operates in multiple geometries
-2. **[Ouroboros Learning](https://github.com/HillaryDanan/ouroboros-learning)**: The cyclical phases of neural computation
-3. **Relativistic Interpretability** (this work): Why interpretations depend on reference frame
+1. **[Multi-Geometric Attention Theory (MGAT)](https://github.com/HillaryDanan/multi-geometric-attention)**: Exploring whether attention could operate in multiple geometries
+2. **[Ouroboros Learning](https://github.com/HillaryDanan/ouroboros-learning)**: Empirical observations of cyclic patterns in model responses
+3. **Relativistic Interpretability** (this work): Investigating whether geometric perspectives affect interpretation
 
-### Mathematical Framework
+### Mathematical Formulation
 
-The core insight can be formalized as:
+We propose the following formalization:
 
 ```
 I(N, T) = ∑_g ∈ G P(g|T) · φ_g(N)
@@ -142,72 +142,73 @@ I(N, T) = ∑_g ∈ G P(g|T) · φ_g(N)
 Where:
 - `I(N, T)` = Interpretation of network N on task T
 - `G` = {square, triangular, hexagonal, pentagonal}
-- `P(g|T)` = Task-geometry affinity
+- `P(g|T)` = Task-geometry affinity (to be empirically determined)
 - `φ_g(N)` = Projection onto geometry g
 
 ## Documentation
 
-- [Mathematical Details](docs/mathematical_details.md) - Full derivations and proofs
-- [Implementation Guide](docs/implementation_guide.md) - Step-by-step integration
-- [Empirical Validation](docs/empirical_validation.md) - Replication instructions
+- [Mathematical Details](docs/mathematical_details.md) - Theoretical derivations
+- [Implementation Guide](docs/implementation_guide.md) - Integration instructions
+- [Empirical Validation](docs/empirical_validation.md) - Replication methodology
 
 ## Contributing
 
-We welcome contributions! Key areas:
+We welcome contributions, critiques, and extensions! Areas of interest:
 
-- **Empirical validation** on new architectures
-- **Efficient implementations** of geometric projections
-- **Theoretical extensions** to new geometries
-- **Applications** to model debugging and improvement
+- **Empirical validation** on diverse architectures
+- **Alternative implementations** of geometric projections
+- **Theoretical refinements** or alternative frameworks
+- **Applications** to practical interpretability tasks
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## Results Summary
+## Preliminary Results
 
 | Model | Square | Triangular | Hexagonal | Pentagonal | Entropy |
 |-------|--------|------------|-----------|------------|---------|
-| GPT-3.5 | 45.2% | 27.1% | 18.0% | **9.7%** | 1.72 |
-| CLIP | 31.4% | 22.8% | 31.2% | 14.6% | 1.88 |
-| Codex | 38.9% | 24.3% | 15.1% | **21.7%** | 1.85 |
+| GPT-3.5* | 45.2% | 27.1% | 18.0% | **9.7%** | 1.72 |
+| CLIP** | 31.4% | 22.8% | 31.2% | 14.6% | 1.88 |
+| Codex** | 38.9% | 24.3% | 15.1% | **21.7%** | 1.85 |
 
-*Note: Pentagonal percentage correlates with creative/transformative capacity*
+*Based on our phase classification methodology  
+**Preliminary analysis, pending validation
 
-## Impact & Applications
+## Potential Applications
 
-### Model Interpretability
-- Identify when models are "stuck" in one geometric mode
-- Detect geometric bottlenecks limiting performance
-- Understand failure modes through geometric lens
+### Research Directions
+- Investigate whether models exhibit consistent geometric patterns
+- Explore correlations between geometric modes and task performance
+- Test whether geometric perspectives reveal interpretable patterns
 
-### Model Improvement
-- Design architectures with balanced geometric access
-- Training objectives that encourage geometric diversity
-- Prompt engineering for geometric mode switching
+### Possible Improvements
+- Develop architectures that explore different geometric patterns
+- Design training objectives that encourage geometric diversity
+- Experiment with prompting strategies based on geometric insights
 
-### Theoretical Insights
-- Explains why some tasks are "hard" for current models
-- Predicts which architectural changes will help
-- Links to fundamental limits of computation
+### Open Questions
+- Do these geometric patterns reflect meaningful computational structures?
+- Can geometric analysis predict or explain model behaviors?
+- How do geometric patterns relate to existing interpretability methods?
 
 ## 📖 Citation
 
-If you use this framework in your research, please cite:
+If you find this framework useful for your research, please consider citing:
 
 ```bibtex
 @software{danan2025relativistic,
-  title = {Relativistic Interpretability: A Geometric Framework for Understanding Neural Network Reasoning},
+  title = {Relativistic Interpretability: An Exploratory Geometric Framework for Neural Network Analysis},
   author = {Danan, Hillary},
   year = {2025},
   url = {https://github.com/HillaryDanan/relativistic-interpretability}
 }
 ```
 
-## Future Directions
+## Future Work
 
-1. **Geometric Steering**: Actively switch models between geometric modes
-2. **Architecture Design**: Build models with explicit geometric pathways
-3. **Interpretability Tools**: GUI for real-time geometric analysis
-4. **Theoretical Extensions**: Quantum geometric interpretations
+1. **Empirical Validation**: Test predictions across diverse models and tasks
+2. **Theoretical Development**: Strengthen mathematical foundations
+3. **Tool Development**: Create accessible interfaces for geometric analysis
+4. **Community Engagement**: Collaborate on validating or refuting hypotheses
 
 ## Contact
 
@@ -216,11 +217,12 @@ If you use this framework in your research, please cite:
 
 ## Acknowledgments
 
-This work builds on insights from mechanistic interpretability, geometric deep learning, and the Ouroboros framework. Special thanks to the open-source community for enabling this research.
+This exploratory work builds on ideas from mechanistic interpretability, geometric deep learning, and empirical analysis of model behaviors. We appreciate feedback and contributions from the research community.
 
 ---
 
 <div align="center">
 
+*This is early-stage research. We encourage critical evaluation and independent validation of these ideas.*
 
 </div>
