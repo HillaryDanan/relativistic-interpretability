@@ -7,15 +7,9 @@
 
 > **An exploratory framework for understanding neural network reasoning through multiple geometric lenses, suggesting how the same computations may appear different from alternative mathematical perspectives.**
 
-## Key Finding
+## Finding
 
-**The 9.7% Transformation Pattern**: Our analysis of 1,000 GPT-3.5 responses reveals that language models spend only 9.7% of their time in what we classify as transformation states - a pattern that may provide insights into current model behaviors and potential areas for improvement.
-
-## Core Insight
-
-<div align="center">
-<img src="https://github.com/HillaryDanan/relativistic-interpretability/blob/main/docs/images/geometric-frames.png" alt="Four Geometric Reference Frames" width="600">
-</div>
+**9.7% Transformation Pattern**: Our analysis of 1,000 GPT-3.5 responses reveals that language models spend only 9.7% of their time in what we classify as transformation states - a pattern that may provide insights into current model behaviors and potential areas for improvement.
 
 Traditional interpretability often assumes a single view of neural computations. We explore whether multiple geometric perspectives might reveal additional patterns - similar to how relativity considers multiple reference frames.
 
@@ -153,7 +147,7 @@ Where:
 
 ## Contributing
 
-We welcome contributions, critiques, and extensions! Areas of interest:
+We welcome contributions, critiques, and extensions. Areas of interest:
 
 - **Empirical validation** on diverse architectures
 - **Alternative implementations** of geometric projections
