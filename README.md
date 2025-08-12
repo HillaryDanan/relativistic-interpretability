@@ -1,222 +1,199 @@
 # Relativistic Interpretability 🧠🔬
 
+[![Version](https://img.shields.io/badge/version-0.1--alpha-orange.svg)](https://github.com/HillaryDanan/relativistic-interpretability)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-pending-yellow.svg)](https://github.com/HillaryDanan/relativistic-interpretability/actions)
-[![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)]()
+[![Status](https://img.shields.io/badge/status-experimental-red.svg)](https://github.com/HillaryDanan/relativistic-interpretability)
 
-> **An exploratory framework for understanding neural network reasoning through multiple geometric lenses, suggesting how the same computations may appear different from alternative mathematical perspectives.**
+> **An experimental framework exploring whether multiple geometric perspectives might reveal additional patterns in neural network attention mechanisms.**
 
-## Finding
+## ⚠️ Important Notice
 
-**9.7% Transformation Pattern**: Our analysis of 1,000 GPT-3.5 responses reveals that language models spend only 9.7% of their time in what we classify as transformation states - a pattern that may provide insights into current model behaviors and potential areas for improvement.
+**This is early-stage, exploratory research (v0.1-alpha).** The ideas presented here are hypotheses and observations, not established findings. We're sharing this work early to invite collaboration, criticism, and independent validation. Please approach with appropriate skepticism.
 
-Traditional interpretability often assumes a single view of neural computations. We explore whether multiple geometric perspectives might reveal additional patterns - similar to how relativity considers multiple reference frames.
+## Research Context
 
-### Proposed Geometric Framework
+This framework emerged from:
+1. **Empirical observation**: Analysis of 1,000 GPT-3.5 responses showing non-uniform phase distributions
+2. **Theoretical speculation**: Whether geometric transformations of attention patterns might reveal interpretable structures
+3. **Exploratory coding**: Initial implementations to test feasibility
 
-| Geometry | Structure | Hypothesized Behavior | Observed Phase |
-|----------|-----------|----------------------|----------------|
-| **Square** | 4-connectivity, grid-like | Sequential processing, logical chains | Analysis (45.2% in our study) |
-| **Triangular** | 6-connectivity, maximum density | Parallel integration, synthesis | Synthesis (27.1% in our study) |
-| **Hexagonal** | Optimal packing, natural efficiency | Balanced processing, coherence | Reflection (18.0% in our study) |
-| **Pentagonal** | Non-tiling, symmetry-breaking | Creative leaps, transformations | **Transformation (9.7% in our study)** |
+**What this is**: A collection of ideas, initial implementations, and hypotheses for community discussion  
+**What this isn't**: A proven methodology or established framework
 
-## Framework Overview
+## Core Hypothesis
 
-### 1. Multi-Geometric Projection
-Transform attention patterns from their native square geometry into alternative geometric bases:
+*Could projecting attention patterns through different geometric lenses reveal distinct computational patterns?*
+
+We explore whether attention mechanisms, typically visualized as square matrices, might exhibit meaningful patterns when transformed through alternative geometric structures (hexagonal, triangular, pentagonal).
+
+## Empirical Starting Point
+
+Our investigation began with classifying 1,000 GPT-3.5 responses into behavioral phases:
+
+| Observed Phase | Frequency | Statistical Significance |
+|----------------|-----------|--------------------------|
+| Analysis | 45.2% | χ² = 120.24, p < 0.0001 |
+| Synthesis | 27.1% | (compared to uniform distribution) |
+| Reflection | 18.0% | |
+| Transformation | 9.7% | |
+
+**Important**: These percentages reflect our arbitrary classification scheme, not fundamental properties.
+
+## Speculative Geometric Mapping
+
+We *hypothesize* (without validation) that these phases *might* correlate with geometric processing patterns:
+
+| Geometry | Mathematical Properties | Speculated Association | Why This Mapping? |
+|----------|------------------------|------------------------|-------------------|
+| Square | 4-connectivity, grid-like | Sequential processing? | Common in current architectures |
+| Triangular | 6-connectivity | Integration patterns? | Pure speculation |
+| Hexagonal | Optimal 2D packing (90.6%) | Efficient processing? | Inspired by nature, unvalidated here |
+| Pentagonal | Non-tiling, aperiodic | Novel combinations? | Theoretical conjecture |
+
+**Note**: The phase-to-geometry mapping is entirely speculative and lacks empirical support.
+
+## Known Limitations
+
+### Fundamental Issues
+- ❌ **Arbitrary classifications**: Our phase definitions may not reflect meaningful distinctions
+- ❌ **Unvalidated mapping**: No evidence linking phases to geometric structures
+- ❌ **Single model tested**: Only GPT-3.5 analyzed with our classification
+- ❌ **Implementation artifacts**: Geometric projections use ad-hoc adjacency matrices
+- ❌ **Circular reasoning risk**: We might be seeing patterns we're looking for
+
+### Technical Limitations
+- ❌ **Arbitrary weights**: Affinity calculations use unjustified weight combinations [0.3, 0.4, 0.3]
+- ❌ **Position encoding**: No solution for non-square geometric position encodings
+- ❌ **Computational overhead**: Parallel geometric processing may be prohibitively expensive
+- ❌ **Hardware constraints**: Non-square operations lack optimization
+
+### Methodological Concerns
+- ❌ **No baseline comparisons**: Haven't shown geometric analysis outperforms simpler methods
+- ❌ **Lack of ablation studies**: Don't know which components (if any) matter
+- ❌ **No cross-validation**: Patterns might be specific to our test set
+
+## Implementation Status
 
 ```python
+# Current implementation is a proof-of-concept
 from relativistic_interpretability import GeometricProjection
 
-# Project attention onto different geometries
+# WARNING: Experimental API, will change
 projector = GeometricProjection(seq_len=512)
 attention = model.get_attention_weights()
 
-geometries = ['square', 'hexagonal', 'triangular', 'pentagonal']
-projections = {g: projector.project(attention, g) for g in geometries}
-
-# Measure geometric affinity
-affinities = {g: projector.measure_affinity(attention, g) for g in geometries}
+# These projections use arbitrary adjacency matrices
+# Results should not be considered meaningful without validation
+projections = projector.project(attention, 'hexagonal')  # Experimental
 ```
 
-### 2. Geometric Divergence Metrics
-Quantify when different geometric interpretations disagree:
+## What We're Testing
 
-```python
-from relativistic_interpretability import GeometricDivergenceMetrics
+### Hypotheses (Unvalidated)
+1. Different attention patterns might show affinity for different geometric structures
+2. Geometric divergence might correlate with model uncertainty
+3. Different tasks might preferentially activate different geometric pathways
 
-# Measure interpretability uncertainty
-metrics = GeometricDivergenceMetrics()
-divergence = metrics.compute_divergence(projections)
+### Predictions (To Be Tested)
+- Vision models may show different geometric distributions than language models
+- Code generation might exhibit different patterns than natural language
+- Multimodal fusion layers might show geometric switching
 
-# High divergence may indicate multiple valid interpretations
-# Low divergence may suggest geometric consensus
-```
+**None of these predictions have been validated.**
 
-### 3. Phase-Coupled Analysis
-Explore potential links between geometric patterns and cyclic behaviors:
+## Request for Feedback
 
-```python
-from relativistic_interpretability import PhaseAnalyzer
+We specifically seek input on:
 
-# Investigate correlations with observed phases
-analyzer = PhaseAnalyzer()
-phase_alignment = analyzer.correlate_with_ouroboros(
-    geometric_outputs=projections,
-    ouroboros_phase=current_phase
-)
-```
+1. **Fundamental flaws**: Are we making incorrect assumptions?
+2. **Alternative explanations**: Could simpler explanations account for our observations?
+3. **Validation approaches**: How would you test these hypotheses?
+4. **Prior work**: Are we unknowingly duplicating existing research?
+5. **Mathematical rigor**: Where do our formalizations need strengthening?
 
-## Empirical Observations & Predictions
+## Why Share This Now?
 
-Our framework generates testable hypotheses:
-
-### Based on Initial Analysis
-- **Language models**: Show 9.7% pentagonal activity in our classification (p < 0.0001)
-- **Hypothesis**: Vision models may show different geometric distributions
-- **Prediction**: Multimodal models might exhibit geometric switching at fusion layers
-
-### Speculative Predictions for Testing
-- Code generation models may show increased pentagonal activity
-- Reasoning-optimized models might balance geometric patterns differently
-- Geometric divergence could correlate with certain model behaviors
-
-## Quick Start
-
-### Installation
-
-```bash
-pip install relativistic-interpretability
-```
-
-Or from source:
-
-```bash
-git clone https://github.com/HillaryDanan/relativistic-interpretability.git
-cd relativistic-interpretability
-pip install -e .
-```
-
-### Minimal Example
-
-```python
-import torch
-from relativistic_interpretability import analyze_geometric_reasoning
-
-# Load your model
-model = load_your_model()
-inputs = tokenize("What is consciousness?")
-
-# Run geometric analysis
-analysis = analyze_geometric_reasoning(model, inputs)
-
-print(f"Dominant geometry: {analysis.dominant_geometry}")
-print(f"Geometric entropy: {analysis.entropy:.3f}")
-print(f"Transformation potential: {analysis.pentagonal_capacity:.1%}")
-```
-
-## Theoretical Background
-
-This exploratory framework attempts to synthesize ideas from:
-
-1. **[Multi-Geometric Attention Theory (MGAT)](https://github.com/HillaryDanan/multi-geometric-attention)**: Exploring whether attention could operate in multiple geometries
-2. **[Ouroboros Learning](https://github.com/HillaryDanan/ouroboros-learning)**: Empirical observations of cyclic patterns in model responses
-3. **Relativistic Interpretability** (this work): Investigating whether geometric perspectives affect interpretation
-
-### Mathematical Formulation
-
-We propose the following formalization:
-
-```
-I(N, T) = ∑_g ∈ G P(g|T) · φ_g(N)
-```
-
-Where:
-- `I(N, T)` = Interpretation of network N on task T
-- `G` = {square, triangular, hexagonal, pentagonal}
-- `P(g|T)` = Task-geometry affinity (to be empirically determined)
-- `φ_g(N)` = Projection onto geometry g
-
-## Documentation
-
-- [Mathematical Details](docs/mathematical_details.md) - Theoretical derivations
-- [Implementation Guide](docs/implementation_guide.md) - Integration instructions
-- [Empirical Validation](docs/empirical_validation.md) - Replication methodology
+Despite the preliminary nature, we're sharing because:
+- Early feedback prevents wasted effort on flawed approaches
+- Open science benefits from sharing hypotheses, not just results
+- Community input can redirect or refine the research
+- Transparency about uncertainty is scientifically valuable
 
 ## Contributing
 
-We welcome contributions, critiques, and extensions. Areas of interest:
-
-- **Empirical validation** on diverse architectures
-- **Alternative implementations** of geometric projections
-- **Theoretical refinements** or alternative frameworks
-- **Applications** to practical interpretability tasks
+We welcome:
+- **Constructive criticism**: Point out flaws and suggest improvements
+- **Independent validation**: Try to replicate or refute our observations
+- **Alternative frameworks**: Propose different interpretations
+- **Null results**: Failed replications are valuable
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## Preliminary Results
+## Quick Start (For Experimenters)
 
-| Model | Square | Triangular | Hexagonal | Pentagonal | Entropy |
-|-------|--------|------------|-----------|------------|---------|
-| GPT-3.5* | 45.2% | 27.1% | 18.0% | **9.7%** | 1.72 |
-| CLIP** | 31.4% | 22.8% | 31.2% | 14.6% | 1.88 |
-| Codex** | 38.9% | 24.3% | 15.1% | **21.7%** | 1.85 |
+```bash
+# Clone and install
+git clone https://github.com/HillaryDanan/relativistic-interpretability.git
+cd relativistic-interpretability
+pip install -e .
 
-*Based on our phase classification methodology  
-**Preliminary analysis, pending validation
+# Run experimental analysis (expect unstable results)
+python examples/minimal_example.py
 
-## Potential Applications
+# Generate your own critiques
+python tests/test_assumptions.py  # TODO: Add assumption tests
+```
 
-### Research Directions
-- Investigate whether models exhibit consistent geometric patterns
-- Explore correlations between geometric modes and task performance
-- Test whether geometric perspectives reveal interpretable patterns
+## Related Work
 
-### Possible Improvements
-- Develop architectures that explore different geometric patterns
-- Design training objectives that encourage geometric diversity
-- Experiment with prompting strategies based on geometric insights
+This experimental framework attempts to combine ideas from:
+- **[Multi-Geometric Attention Theory](https://github.com/HillaryDanan/multi-geometric-attention)**: Theoretical exploration of non-square attention
+- **[Ouroboros Learning](https://github.com/HillaryDanan/ouroboros-learning)**: Empirical phase classification study
 
-### Open Questions
-- Do these geometric patterns reflect meaningful computational structures?
-- Can geometric analysis predict or explain model behaviors?
-- How do geometric patterns relate to existing interpretability methods?
+Both are also preliminary research with their own limitations.
 
-## 📖 Citation
+## Citation
 
-If you find this framework useful for your research, please consider citing:
+If you reference this experimental work:
 
 ```bibtex
 @software{danan2025relativistic,
-  title = {Relativistic Interpretability: An Exploratory Geometric Framework for Neural Network Analysis},
+  title = {Relativistic Interpretability: Experimental Geometric Analysis of Attention (v0.1-alpha)},
   author = {Danan, Hillary},
   year = {2025},
+  note = {Preliminary research framework, unvalidated},
   url = {https://github.com/HillaryDanan/relativistic-interpretability}
 }
 ```
 
-## Future Work
+## Disclaimer
 
-1. **Empirical Validation**: Test predictions across diverse models and tasks
-2. **Theoretical Development**: Strengthen mathematical foundations
-3. **Tool Development**: Create accessible interfaces for geometric analysis
-4. **Community Engagement**: Collaborate on validating or refuting hypotheses
+This is experimental research in early development. Key points:
+- 📊 Observations are from limited data with arbitrary classifications
+- 🔬 Hypotheses are speculative and unvalidated
+- 💭 Geometric mappings are theoretical conjecture
+- ⚗️ Code is proof-of-concept, not production-ready
+- 🤔 We might be completely wrong about everything
+
+**Use with extreme caution. Validate independently. Question everything.**
 
 ## Contact
 
 - **Author**: Hillary Danan
 - **Email**: hillarydanan@gmail.com
+- **Status**: Seeking collaborators, critics, and reviewers
 
 ## Acknowledgments
 
-This exploratory work builds on ideas from mechanistic interpretability, geometric deep learning, and empirical analysis of model behaviors. We appreciate feedback and contributions from the research community.
+Thanks to the research community for encouraging open sharing of preliminary ideas. Special appreciation for those who provide constructive criticism that improves the work.
 
 ---
 
 <div align="center">
 
-*This is early-stage research. We encourage critical evaluation and independent validation of these ideas.*
+**"The best way to have a good idea is to have lots of ideas and throw away the bad ones."** - Linus Pauling
+
+*This might be one to throw away. Help us figure that out.*
 
 </div>
