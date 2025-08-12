@@ -148,22 +148,37 @@ class GeometricProjection:
         # Compute eigenvectors of the Laplacian
         eigenvalues, eigenvectors = torch.linalg.eigh(laplacian)
         # Project attention onto eigenvector basis
-        spectral = torch.zeros_like(attention)
-        for b in range(attention.shape[0]):
-            for h in range(attention.shape[1]):
-                att_matrix = attention[b, h]
-                # Project onto top-k eigenvectors
-                k = min(20, self.seq_len // 2)
-                proj = eigenvectors[:, :k] @ eigenvectors[:, :k].T @ att_matrix
-                spectral[b, h] = proj
+        # spectral = torch.zeros_like(attention)
+        # for b in range(attention.shape[0]):
+        #     for h in range(attention.shape[1]):
+        #         att_matrix = attention[b, h]
+        #         # Project onto top-k eigenvectors
+        #         k = min(20, self.seq_len // 2)
+        #         proj = eigenvectors[:, :k] @ eigenvectors[:, :k].T @ att_matrix
+        #         spectral[b, h] = proj
+        # results['spectral'] = spectral
+        # Method 2: Spectral projection
+        eigenvalues, eigenvectors = torch.linalg.eigh(laplacian)
+        k = min(20, self.seq_len // 2)
+        V_k = eigenvectors[:, :k] # [seq, k]
+        proj_matrix = torch.einsum('ik,jk->ij', V_k, V_k)
+        spectral = torch.einsum('ij,bhjk->bhik', proj_matrix, attention)
         results['spectral'] = spectral
+
+        # Create projection matrix V_k @ V_k.T once
+        proj_matrix = torch.einsum('ik,jk->ij', V_k, V_k)  # [seq, seq]
+
+        # Apply projection to all batches and heads simultaneously
+        spectral = torch.einsum('ij,bhjk->bhik', proj_matrix, attention)
         
         # Method 3: Message passing (graph convolution)
         flow = attention.clone()
         for _ in range(3):  # 3 iterations of message passing
-            flow = torch.matmul(adj_expanded, flow)
+            # flow = torch.matmul(adj_expanded, flow)
+            # Beautiful einsum: adjacency matrix guides the flow for each head
+            flow = torch.einsum('ij,bhjk->bhik', adj, flow)
             flow = F.softmax(flow, dim=-1)
-        results['flow'] = flow
+            results['flow'] = flow
         
         return results
     
@@ -188,7 +203,9 @@ class GeometricProjection:
         
         # 1. Structural overlap
         attention_mean = attention.mean(dim=(0, 1))  # Average over batch and heads
-        overlap = (attention_mean * adj).sum() / (attention_mean.sum() + 1e-8)
+        # overlap = (attention_mean * adj).sum() / (attention_mean.sum() + 1e-8)
+        # Einsum makes the element-wise multiplication and sum clearer
+        overlap = torch.einsum('ij,ij->', attention_mean, adj) / (attention_mean.sum() + 1e-8)
         affinities.append(overlap.item())
         
         # 2. Spectral similarity
