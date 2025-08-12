@@ -2,7 +2,7 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/HillaryDanan/relativistic-interpretability/workflows/Tests/badge.svg)](https://github.com/HillaryDanan/relativistic-interpretability/actions)
+[![Tests](https://img.shields.io/badge/tests-pending-yellow.svg)](https://github.com/HillaryDanan/relativistic-interpretability/actions)
 [![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)]()
 
 > **"An exploratory framework for understanding neural network reasoning through multiple geometric lenses, suggesting how the same computations may appear different from alternative mathematical perspectives."**
