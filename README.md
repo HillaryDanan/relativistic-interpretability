@@ -5,7 +5,7 @@
 [![Tests](https://img.shields.io/badge/tests-pending-yellow.svg)](https://github.com/HillaryDanan/relativistic-interpretability/actions)
 [![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)]()
 
-> **"An exploratory framework for understanding neural network reasoning through multiple geometric lenses, suggesting how the same computations may appear different from alternative mathematical perspectives."**
+> **An exploratory framework for understanding neural network reasoning through multiple geometric lenses, suggesting how the same computations may appear different from alternative mathematical perspectives.**
 
 ## Key Finding
 
