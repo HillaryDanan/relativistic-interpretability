@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this framework, please cite it as below."
+authors:
+  - family-names: Danan
+    given-names: Hillary
+    email: hillarydanan@gmail.com
+title: "Relativistic Interpretability: A Geometric Framework for Understanding Neural Network Reasoning"
+version: 1.0.0
+date-released: 2024-08-12
+url: https://github.com/HillaryDanan/relativistic-interpretability
+keywords:
+  - interpretability
+  - mechanistic-interpretability
+  - attention-mechanisms
+  - geometric-deep-learning
+  - transformers
+  - neural-networks
+abstract: "A framework showing that neural network interpretations are relative to geometric reference frames, revealing a 9.7% transformation bottleneck in language models corresponding to restricted pentagonal pathway access."
+license: MIT

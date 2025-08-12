@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "source": "Ouroboros Learning Framework Analysis",
+    "model": "GPT-3.5-turbo",
+    "n_samples": 1000,
+    "date": "2024-08-01",
+    "significance_level": 0.0001
+  },
+  "phase_geometry_mapping": {
+    "analysis": {
+      "primary_geometry": "square",
+      "percentage": 0.452,
+      "std_dev": 0.023,
+      "p_value": 0.0001,
+      "description": "Sequential, logical processing dominant during analysis phase"
+    },
+    "synthesis": {
+      "primary_geometry": "triangular",
+      "percentage": 0.271,
+      "std_dev": 0.018,
+      "p_value": 0.0001,
+      "description": "High connectivity enables integration during synthesis"
+    },
+    "reflection": {
+      "primary_geometry": "hexagonal",
+      "percentage": 0.180,
+      "std_dev": 0.015,
+      "p_value": 0.0001,
+      "description": "Balanced, efficient processing during reflection"
+    },
+    "transformation": {
+      "primary_geometry": "pentagonal",
+      "percentage": 0.097,
+      "std_dev": 0.012,
+      "p_value": 0.0001,
+      "description": "Symmetry-breaking geometry restricted, limiting creativity"
+    }
+  },
+  "key_findings": {
+    "transformation_bottleneck": {
+      "value": 0.097,
+      "interpretation": "Models spend only 9.7% of time in transformation state",
+      "implication": "Geometric constraint on creative reasoning"
+    },
+    "phase_stability": {
+      "analysis": "high",
+      "synthesis": "medium",
+      "reflection": "medium",
+      "transformation": "low"
+    },
+    "transition_probabilities": {
+      "analysis_to_synthesis": 0.31,
+      "synthesis_to_reflection": 0.28,
+      "reflection_to_transformation": 0.12,
+      "transformation_to_analysis": 0.43
+    }
+  },
+  "validation": {
+    "chi_square_statistic": 187.3,
+    "degrees_of_freedom": 3,
+    "p_value": 1.2e-40,
+    "effect_size_cramers_v": 0.433,
+    "interpretation": "Very strong association between phases and geometries"
+  }
+}
